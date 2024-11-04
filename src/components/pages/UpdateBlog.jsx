@@ -104,10 +104,18 @@ const UpdateBlog = () => {
     }
 
     try {
+      const token = localStorage.getItem('authToken'); // Retrieve the token from localStorage
+
+
       const { data } = await axios.put(
         `https://blog-backend-two-chi.vercel.app/api/v1/blog/update/${id}`,
         updatedBlog,
-        { withCredentials: true }
+        { withCredentials: true ,
+
+          headers: {
+            "Authorization": `Bearer ${token}` // Set the token in the Authorization header
+          }
+        }
       );
       toast.success(data.message);
     } catch (error) {
