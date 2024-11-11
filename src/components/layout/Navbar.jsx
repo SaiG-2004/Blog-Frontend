@@ -14,7 +14,7 @@ const Navbar = () => {
     setShow(!show);
   };
 
-  const storedUser = localStorage.getItem("user");
+  const storedUser = JSON.parse(localStorage.getItem("user"));
   
   const isDashboard = useLocation();
   
@@ -38,6 +38,7 @@ const Navbar = () => {
     // }
     localStorage.clear();
     handleSetAuthenticated(false);
+    toast.success("Logged out successfully");
   };
 console.log(isAuthenticated)
   return (
@@ -93,16 +94,10 @@ console.log(isAuthenticated)
                 <MdDarkMode className="dark-icon" />
               )}
             </button>
-            {isAuthenticated && storedUser.role == "author" ? (
-              <Link
-                to={"/dashboard"}
-                onClick={handleNavbar}
-                className="dashboard-btn"
-              >
+            {isAuthenticated && storedUser?.role === "author" && (
+              <Link to="/dashboard" onClick={handleNavbar} className="dashboard-btn">
                 DASHBOARD
               </Link>
-            ) : (
-              ""
             )}
             {!isAuthenticated ? (
               <Link to={"/login"} onClick={handleNavbar} className="login-btn">
