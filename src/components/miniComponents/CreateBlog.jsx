@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
+import {useNavigate} from 'react-router-dom'
 
 const CreateBlog = () => {
   const [category, setCategory] = useState("");
@@ -21,6 +22,8 @@ const CreateBlog = () => {
   const [paraThreeImagePreview, setParaThreeImagePreview] = useState("");
   const [title, setTitle] = useState("");
   const [published, setPublished] = useState(true);
+
+  const navigate = useNavigate();
 
   const mainImagePreviewHandler = (e) => {
     const file = e.target.files[0];
@@ -127,6 +130,7 @@ const CreateBlog = () => {
       setParaThreeImage("");
       setParaThreeImagePreview("");
       toast.success(data.message);
+      navigate("/");
     } catch (error) {
       toast.error(error.response.data.message);
     }

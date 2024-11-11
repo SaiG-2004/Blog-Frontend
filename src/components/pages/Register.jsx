@@ -81,6 +81,26 @@ const Register = () => {
       <section className="auth-form">
         <form onSubmit={handleRegister}>
           <h1>REGISTER</h1>
+          <div
+            // style={{
+            //   display: "flex",
+            //   flexDirection: "row",
+            //   alignItems: "center",
+            // }}
+          >
+            <div className="avatar"  >
+              <img
+                src={avatarPreview ? `${avatarPreview}` : "/pic.jpg"}
+                alt="avatar"
+              />
+            </div>
+            <input
+              type="file"
+              onChange={changeAvatarHandler}
+              className="avatar_input_tag"
+              style={{ border: "none" }}
+            />
+          </div>
           <select value={role} onChange={(e) => setRole(e.target.value)}>
             <option value="">SELECT ROLE</option>
             <option value="Reader">READER</option>
@@ -113,10 +133,11 @@ const Register = () => {
           <div>
             <input
               type="password"
-              placeholder="Password"
+              placeholder="Password (atleast 8 characters)"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
+
           </div>
           <select
             value={education}
@@ -129,26 +150,7 @@ const Register = () => {
             <option value="Masters">Masters</option>
             <option value="PhD">PhD</option>
           </select>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-            }}
-          >
-            <div className="avatar">
-              <img
-                src={avatarPreview ? `${avatarPreview}` : "/pic.jpg"}
-                alt="avatar"
-              />
-            </div>
-            <input
-              type="file"
-              onChange={changeAvatarHandler}
-              className="avatar_input_tag"
-              style={{ border: "none" }}
-            />
-          </div>
+         
           <p>
             Already Registered? <Link to={"/login"}>Login Now</Link>
           </p>
