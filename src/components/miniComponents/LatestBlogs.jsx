@@ -11,7 +11,7 @@ const LatestBlogs = ({ heading, newClass, blogs }) => {
       <h3>{heading}</h3>
       <div className="container">
         {blogs &&
-          blogs.slice(8,14).map((element) => {
+          blogs.map((element) => {
             return (
               <Link to={`/blog/${element._id}`} className="card" key={element._id}>
                 <img src={element.mainImage.url} alt="blog" />
