@@ -18,7 +18,7 @@ const Navbar = () => {
   
   const { mode, setMode, isAuthenticated, user, handleSetAuthenticated } = useContext(Context);
   
-  const navigateTo = useNavigate();
+  // const navigateTo = useNavigate();
   const handleLogout = async (e) => {
     e.preventDefault();
     // try {
@@ -91,7 +91,7 @@ console.log(isAuthenticated)
                 <MdDarkMode className="dark-icon" />
               )}
             </button>
-            {isAuthenticated  ? (
+            {isAuthenticated && user.role == "author" ? (
               <Link
                 to={"/dashboard"}
                 onClick={handleNavbar}
