@@ -8,7 +8,7 @@ const HeroSection = () => {
   return (
     <section className="hero">
       {blogs && blogs.length > 0 ? (
-        blogs.slice(0, 2).map((element) => {
+        blogs.slice(6, 8).map((element) => {
           return (
             <Link to={`/blog/${element._id}`} className="card" key={element._id}>
               <img src={element.mainImage.url} alt="blog" className="blogImg" />

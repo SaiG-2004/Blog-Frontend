@@ -47,6 +47,7 @@ const MyBlogs = () => {
         {myBlogs && myBlogs.length > 0
           ? myBlogs.map((element) => {
               return (
+                
                 <div className="author-blog-card" key={element._id}>
                   {element.mainImage && element.mainImage && (
                     <img src={element.mainImage.url} alt="blogImg" />

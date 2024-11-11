@@ -54,7 +54,7 @@ const Register = () => {
       const role = data.user.role; // assuming the role is returned in data.role
       if (role) {
         localStorage.setItem("role", role); // store role in localStorage
-        handleSetUser(true); // Update authentication state in context
+        handleSetAuthenticated(true); // Update authentication state in context
       }
 
       setName("");
