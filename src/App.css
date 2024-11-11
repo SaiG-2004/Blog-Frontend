@@ -1400,16 +1400,16 @@ footer .container:last-child .links a svg {
   border: none;
   font-weight: 700;
   color: #fff;
-  background: #7e22ce;
+  background: #378aab;
   transition: 0.3s;
 }
 .auth-form form div input::file-selector-button:hover {
   transition: 0.3s;
-  background: #581c87;
+  background: #0f4571;
 }
 .auth-form form .submit-btn {
   padding: 10px 0;
-  background: #be185d;
+  background: #30977c;
   color: #fff;
   font-weight: 700;
   border: none;
@@ -1418,7 +1418,7 @@ footer .container:last-child .links a svg {
 }
 .auth-form form .submit-btn:hover {
   transition: 0.3s;
-  background: #831843;
+  background: #1b7c45;
   cursor: pointer;
 }
 .auth-form form p {
