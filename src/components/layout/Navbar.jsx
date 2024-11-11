@@ -14,11 +14,11 @@ const Navbar = () => {
     setShow(!show);
   };
 
-  const storedUser = JSON.parse(localStorage.getItem("user"));
   
   const isDashboard = useLocation();
   
   const { mode, setMode, isAuthenticated, handleSetAuthenticated } = useContext(Context);
+  const storedUser = JSON.parse(localStorage.getItem("user"));
   
   // const navigateTo = useNavigate();
   const handleLogout = async (e) => {
@@ -94,7 +94,7 @@ console.log(isAuthenticated)
                 <MdDarkMode className="dark-icon" />
               )}
             </button>
-            {isAuthenticated && storedUser?.role === "author" && (
+            {isAuthenticated && storedUser?.role === "Author" && (
               <Link to="/dashboard" onClick={handleNavbar} className="dashboard-btn">
                 DASHBOARD
               </Link>
