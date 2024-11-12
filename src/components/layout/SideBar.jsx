@@ -73,9 +73,9 @@ const SideBar = ({ setComponent }) => {
           <button onClick={() => handleComponent("Create Blog")}>
             CREATE BLOG
           </button>
-          <button onClick={() => handleComponent("Analytics")}>
+          {/* <button onClick={() => handleComponent("Analytics")}>
             CHART
-          </button>
+          </button> */}
           <button onClick={() => handleComponent("My Profile")}>
             MY PROFILE
           </button>
