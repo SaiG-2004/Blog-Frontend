@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { useParams } from "react-router-dom";
+import { useNavigate,  useParams } from "react-router-dom";
 import { Context } from "../../main";
 
 const UpdateBlog = () => {
@@ -24,6 +24,7 @@ const UpdateBlog = () => {
   const [paraThreeImagePreview, setParaThreeImagePreview] = useState("");
   const [title, setTitle] = useState("");
   const [published, setPublished] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchBlog = async () => {
@@ -118,6 +119,7 @@ const UpdateBlog = () => {
         }
       );
       toast.success(data.message);
+       navigate("/dashboard");
     } catch (error) {
       toast.error(error.response.data.message);
     }
